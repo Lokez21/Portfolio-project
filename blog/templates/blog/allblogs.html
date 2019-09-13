@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>Home</title>
+    <title>Lokesh's Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Font awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <style>
         .bd-placeholder-img {
@@ -33,15 +36,15 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Port</a>
+            <a class="navbar-brand" href="{% url 'home'%}">Port</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="https://www.linkedin.com/in/lokez/" target="_blank">Linkedin</a>
-                    <a class="nav-item nav-link" href="#">Resume</a>
-                    <a class="nav-item nav-link" href="#">Blog</a>
+                    <a class="nav-item nav-link" href="{% static 'list.pdf' %}">Resume</a>
+                    <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
                 </div>
             </div>
         </nav>
@@ -53,10 +56,12 @@
 
                 <h1>Blogs</h1><br>
 
-                {% for blogitem in blogitems.all %}
-                    <h5><a href=""></a>{{blogitem.title}}{{blogitem}}</a></h5>
+                {% for blogitem in blogitems.all reversed %}
+                    <h5><a href=""></a>{{blogitem.title}}</a></h5>
+                    <p>{{blogitem.date_posted_pretty}}</p>
                     <img class="img-fluid" src="{{blogitem.image.url}}" alt="" width=200>
-                    <p>{{blogitem.body_text}}</p>
+                    <p>{{blogitem.summary}}</p>
+                    <a href="{{blogitem.id}}"><button type="button" class="btn btn-info"><i class="fa fa-eye"></i> View</button></a>
                     <hr>
                 {% endfor %}
 
