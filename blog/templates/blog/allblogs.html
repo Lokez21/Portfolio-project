@@ -8,16 +8,21 @@
             <div class="container">
 
                 <h1>Blogs</h1><br>
-
-                {% for blogitem in blogitems.all reversed %}
-                    <h5><a href=""></a>{{blogitem.title}}</a></h5>
-                    <p>{{blogitem.date_posted_pretty}}</p>
-                    <img class="img-fluid" src="{{blogitem.image.url}}" alt="" width=200>
-                    <p>{{blogitem.summary|safe }}</p>
-                    <a href="{{blogitem.id}}"><button type="button" class="btn btn-info"><i class="fa fa-eye"></i> View</button></a>
-                    <hr>
-                {% endfor %}
-
+                <div class="row">
+                    {% for blogitem in blogitems.all reversed %}
+                    <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{blogitem.title}}</h5>
+                        <p>{{blogitem.date_posted_pretty}}</p>
+                        <p class="card-text">{{blogitem.summary|safe }}</p>
+                        <img class="img-fluid" src="{{blogitem.image.url}}" alt="" width=200><br><br>
+                        <a href="#" class="btn btn-primary">View blog</a>
+                      </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </main>
