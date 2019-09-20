@@ -140,3 +140,9 @@ CKEDITOR_UPLOAD_PATH = "uploadsCK/"
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
