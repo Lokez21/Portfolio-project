@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>Home</title>
+    <title>Lokesh Portfolio</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -42,9 +42,11 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     {% with url_name=request.resolver_match.url_name %}
+
                     <a class="nav-item nav-link" href="https://www.linkedin.com/in/lokez/" target="_blank"><i class="fa fa-linkedin-square"></i> Linkedin</a>
                     <a class="nav-item nav-link" href="{% static 'list.pdf' %}" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
                     <a class="nav-item nav-link {% if url_name == 'allblogs' %}active{% endif %}" href="{% url 'allblogs' %}"><i class="fa fa-pencil-square-o"></i> Blog</a>
+                    <a class="nav-item nav-link btn btn-light text-dark" href="mailto:lokez21@gmail.com"><i class="fa fa-pencil-square-o"></i> Email</a>
                     {% endwith %}
                 </div>
             </div>
@@ -57,8 +59,8 @@
     <footer class="text-muted bg-dark">
         <div class="container" >
             <br><br>
-            <p class="text-center text-muted">This site is crafted using Python Django & Bootstrap 4</p>
-            <p class="text-center">©️ Copyright - Lokesh {% now "Y" %}</p><br>
+            <p class="text-center">©️ Copyright - Lokesh {% now "Y" %}</p>
+            <p class="text-center text-muted"><i>Handcrafted using Bootstrap 4 & Django 2</i></p><br>
             <p class="float-right">
                 <a href="#">Back to top</a>
             </p>
