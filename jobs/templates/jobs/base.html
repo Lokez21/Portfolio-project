@@ -28,6 +28,11 @@
             user-select: none;
         }
 
+        .pro{
+            color:black;
+            background: #fff
+        }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -47,7 +52,7 @@
                     {% with url_name=request.resolver_match.url_name %}
 
                     <a class="nav-item nav-link" href="https://www.linkedin.com/in/lokez/" target="_blank"><i class="fa fa-linkedin-square"></i> Linkedin</a>
-                    <a class="nav-item nav-link" href="{% static 'list.pdf' %}" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
+                    <a class="nav-item nav-link" href="{% static 'Lokesh_Sivakumar_CV.docx' %}" target="_blank"><i class="fa fa-file-pdf-o"></i> Resume</a>
                     <a class="nav-item nav-link {% if url_name == 'allblogs' %}active{% endif %}" href="{% url 'allblogs' %}"><i class="fa fa-pencil-square-o"></i> Blog</a>
                     <a class="nav-item nav-link btn btn-light text-dark" href="mailto:lokez21@gmail.com"><i class="fa fa-pencil-square-o"></i> Email</a>
                     {% endwith %}

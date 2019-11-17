@@ -22,3 +22,8 @@ class Blog(models.Model):
 
     def date_posted_pretty(self):
         return self.date_posted.strftime('%b %e %Y')
+
+    class Meta:
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blog'
+        ordering = ['date_posted']

@@ -8,3 +8,8 @@ class Job(models.Model):
     position = models.IntegerField(blank=True, null=True)
     def __str__(self):
         return self.summary
+
+    class Meta:
+        verbose_name = 'Job'
+        verbose_name_plural = 'Job'
+        ordering = ['position']
