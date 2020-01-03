@@ -2,6 +2,11 @@
 {% block body %}
 
 {% load staticfiles %}
+<style>
+    .tick {
+        color: green !important;
+    }
+</style>
     <main role="main">
 
         <section class="jumbotron text-center">
@@ -9,14 +14,26 @@
                 <h1 class="jumbotron-heading text-muted"><kbd>Hello World!</kbd></h1><br>
 
                 <h4 class="text-muted">I am <span class="text-info">Lokesh Sivakumar</span>.</h4>
-                <p class="lead text-muted">A full stack web developer in Bournemouth University. <br></p>
+                <p class="lead text-muted">A full stack web/software developer in Bournemouth University. <br></p>
                     <p><kbd>creative</kbd> <kbd>resourceful</kbd> <kbd>talented</kbd> <kbd>avid learner</kbd> <kbd>problem-solving</kbd> <br>
                         {<kbd class="pro">html</kbd> <kbd class="pro">css</kbd> <kbd class="pro">python 3</kbd> <kbd class="pro">php</kbd> <kbd class="pro">rdbms</kbd> <kbd class="pro">photoshop</kbd> <kbd class="pro">wordpress</kbd>}</p>
-                <!-- <p>
-                    <a href="mailto:lokez21@gmail.com" class="btn btn-primary my-2">Email</a>
-                </p> -->
+                
                 <br>
-                <img src="{% static 'headshot.png' %}" width="300" alt="">
+                <img src="{% static 'headshot.png' %}" width="300" alt=""><br><br><br>
+                <h4 class="text-center">Key Skills</h4>
+                <div class="row justify-content-center">
+
+                    <ul class="text-left list-inline">
+                        <div>
+                            <li><i class="fa fa-check-circle tick"></i> Excellent problem solving and logical thinking skills.</li>
+                            <li><i class="fa fa-check-circle tick"></i> Good knowledge of data structures, algorithms and SDLC.</li>
+                            <li><i class="fa fa-check-circle tick"></i> Provided many business solutions and ideas that had positive impact on the business.</li>
+                            <li><i class="fa fa-check-circle tick"></i> Trained, hired and motivated junior developers.</li>
+                            <li><i class="fa fa-check-circle tick"></i> Pro-active self taught developer who loves to learn new technologies.</li>
+                            <li><i class="fa fa-check-circle tick"></i> Self reliant when it comes to working alone. Team player, listens more.</li>
+                        </div>
+                    </ul>
+                </div>
             </div>
         </section>
 
